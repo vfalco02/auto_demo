@@ -20,3 +20,11 @@ source env/bin/activate
 pip install -r requirements.txt
 pytest
 ```
+
+## Contributing
+
+Add pre-commit and install it
+
+```
+pre-commit install
+```
