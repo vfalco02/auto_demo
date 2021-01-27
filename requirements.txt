@@ -1,0 +1,5 @@
+ipython==7.19.0
+pytest==6.2.1
+pytest-selenium==2.0.1
+selene==2.0.0.a34
+selenium==3.141.0

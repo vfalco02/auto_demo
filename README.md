@@ -9,3 +9,14 @@ This project automates the [SauceLabs](https://saucelabs.com/) automation demo s
 The purpose of this project is to show how to use the [Page-Object-Model](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html) with PyTest to automate a website.
 
 The intent is that this grows to cover more advanced concepts.
+
+## Setup
+
+This project uses python 3.8. Follow the below steps to setup the project:
+
+```
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+pytest
+```
