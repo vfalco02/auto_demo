@@ -47,13 +47,15 @@ class LoginPage:
 
     # FULL METHODS
     def login_to_application(self, user_name, password):
-        logger.info('----- Logging into application with user_name: %s -----', user_name)
+        logger.info('----- Logging into application with user_name: %s -----',
+                    user_name)
         self._navigate_to_login()
         self._enter_user_name(user_name)
         self._enter_password(password)
         self._click_login()
 
     def assert_error_matches_expected(self, expected_text):
-        logger.info('----- Validating error message matches "%s" -----', expected_text)
+        logger.info('----- Validating error message matches "%s" -----',
+                    expected_text)
         actual_error = s(self.err_error).get(query.text)
         assert actual_error == expected_text, f'{actual_error} != {expected_text}'
