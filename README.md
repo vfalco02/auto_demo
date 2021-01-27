@@ -23,7 +23,7 @@ pytest
 
 ## Contributing
 
-Add pre-commit and install it
+Add pre-commit and install it. Pre-commit will be used to run [Flake8](https://flake8.pycqa.org/en/latest/) and [yapf](https://github.com/google/yapf) against the repository upon commit.
 
 ```
 pre-commit install
