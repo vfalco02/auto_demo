@@ -18,6 +18,11 @@ This project uses python 3.8. Follow the below steps to setup the project:
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
+```
+
+## Execution
+
+```
 pytest
 ```
 
