@@ -5,12 +5,16 @@ from selene.support.shared import browser
 
 from .pages.login import LoginPage
 
+logger = logging.getLogger()
+
 login_page = LoginPage()
 
 
 @pytest.fixture(autouse=True)
 def setup():
-    browser.config.base_url = 'https://www.saucedemo.com'
+    url = 'https://www.saucedemo.com'
+    logger.info(f'----- Opening browser and navigating to {url} -----'
+    browser.config.base_url = url
 
 
 def test_login():
