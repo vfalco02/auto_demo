@@ -13,7 +13,7 @@ login_page = LoginPage()
 @pytest.fixture(autouse=True)
 def setup():
     url = 'https://www.saucedemo.com'
-    logger.info(f'----- Opening browser and navigating to {url} -----'
+    logger.info(f'----- Opening browser and navigating to {url} -----')
     browser.config.base_url = url
 
 
