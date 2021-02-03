@@ -1,6 +1,6 @@
 import logging
 
-from selene.api import s, ss, have, query
+from selene.api import s, have, query
 from selene.support.shared import browser
 
 logger = logging.getLogger()
