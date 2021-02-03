@@ -17,6 +17,7 @@ class InventoryPage:
     lbl_shopping_cart_count = '.shopping_cart_badge'
 
     def _get_all_items(self):
+        logger.debug('--- Getting all items ---')
         items = [{
             'name': item.s(self.lbl_item_name).get(query.text),
             'desc': item.s(self.lbl_item_description).get(query.text),
@@ -101,20 +102,26 @@ class InventoryPage:
         logger.info('----- Adding all items to the cart -----')
         items = self._get_all_items()
         for item in items:
+            logger.debug(f'--- Adding item {item["name"]} to cart ---')
+            logger.disabled = True
             current_count = self._get_cart_count()
             if item['element'].s(self.btn_add_remove).get(
                     query.text).upper() == 'ADD TO CART':
                 item['element'].s(self.btn_add_remove).click()
                 new_count = self._get_cart_count()
                 assert new_count == current_count + 1, 'The cart count did not increment by 1'
+            logger.disabled = False
 
     def remove_all_items_from_cart(self):
         logger.info('----- Removing all items from the cart -----')
         items = self._get_all_items()
         for item in items:
+            logger.debug(f'--- Removing item {item["name"]} from cart ---')
+            logger.disabled = True
             current_count = self._get_cart_count()
             if item['element'].s(self.btn_add_remove).get(
                     query.text).upper() == 'REMOVE':
                 item['element'].s(self.btn_add_remove).click()
                 new_count = self._get_cart_count()
                 assert new_count == current_count - 1, 'The cart count did not decrement by 1'
+            logger.disabled = False
