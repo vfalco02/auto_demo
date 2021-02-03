@@ -125,3 +125,11 @@ class InventoryPage:
                 new_count = self._get_cart_count()
                 assert new_count == current_count - 1, 'The cart count did not decrement by 1'
             logger.disabled = False
+
+    def validate_item_information(self, item_info):
+        logger.info(
+            f'----- Validating item {item_info["name"]} information is correct -----'
+        )
+        items = self._get_all_items()
+        [item.pop('element') for item in items]
+        assert item_info in items, f'{item_info} not in {items}'
