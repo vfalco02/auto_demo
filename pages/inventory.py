@@ -133,3 +133,5 @@ class InventoryPage:
         items = self._get_all_items()
         [item.pop('element') for item in items]
         assert item_info in items, f'{item_info} not in {items}'
+
+    # TODO: Add methods for changing the order

@@ -49,6 +49,9 @@ def test_remove_all_items_from_cart():
     inventory_page.remove_all_items_from_cart()
 
 
+# TODO: Add tests for ordering
+
+
 def load_item_information_from_file():
     path = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
     filename = './inventory.yml'
