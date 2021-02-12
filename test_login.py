@@ -48,4 +48,4 @@ def test_user_locked_out():
     login_page.login_to_application('locked_out_user', 'secret_sauce')
     login_page.assert_not_logged_in()
     login_page.assert_error_matches_expected(
-        'Epic sadface: Sorry, this user has been locked out')
+        'Epic sadface: Sorry, this user has been locked out.')
