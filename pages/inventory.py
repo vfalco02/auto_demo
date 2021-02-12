@@ -6,6 +6,8 @@ logger = logging.getLogger()
 
 
 class InventoryPage:
+
+    # LOCATORS
     div_inventory_item = '.inventory_item'
     div_item_name = '//div[@class="inventory_item_name"][text()="{item_name}"]'
 
@@ -16,6 +18,7 @@ class InventoryPage:
     lbl_item_description = '.inventory_item_desc'
     lbl_shopping_cart_count = '.shopping_cart_badge'
 
+    # HELPER METHODS
     def _get_all_items(self):
         logger.debug('--- Getting all items ---')
         items = [{
@@ -81,6 +84,8 @@ class InventoryPage:
         add_btn = parent_container.s(self.btn_add_remove)
         assert add_btn.get(query.text).upper() == 'ADD TO CART', (
             f'The item {item_name} does not show as available')
+
+    # FULL METHODS
 
     def add_item_to_cart(self, item_name):
         logger.info(f'----- Adding item {item_name} to the cart -----')
